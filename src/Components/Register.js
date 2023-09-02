@@ -13,7 +13,7 @@ export default function Register(props) {
     passBox = "password";
     btnclasses.push("btn-success");
   }
-  const styleRegister = styled.div `
+  const StyleRegister = styled.div `
   width 600px;
   &:hover {
     box-shadow:0px 0px 5px gray;
@@ -24,7 +24,7 @@ export default function Register(props) {
   `;
   return (
   
-    <styleRegister className="container card p-3 mt-2 ">
+    <StyleRegister className="container card p-3 mt-2 ">
       <h1 className="text-center">Registration from</h1>
       <form onSubmit={props.submit}>
         <div className="form-group">
@@ -56,7 +56,7 @@ export default function Register(props) {
         </button>
       
       </form>
-    </styleRegister>
+    </StyleRegister>
     
   );
 }
