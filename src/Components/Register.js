@@ -13,7 +13,17 @@ export default function Register(props) {
     passBox = "password";
     btnclasses.push("btn-success");
   }
-  const StyleRegister = styled.div `
+  const Stylebtn = styled.button`
+    display:${(props) => (props.flag === "1" ? "inline-block" : "block")};
+    padding: 10px; 
+    background-color:${(props) => props.bgcolor};
+    border:none;
+    color:white;
+    width:${(props) => (props.flag === "1" ? "45%" : "100%")};
+    borser-redius:5px;
+    margin:5px
+ `;
+  const StyleRegister = styled.div`
   width 600px;
   &:hover {
     box-shadow:0px 0px 5px gray;
@@ -23,7 +33,6 @@ export default function Register(props) {
   }
   `;
   return (
-  
     <StyleRegister className="container card p-3 mt-2 ">
       <h1 className="text-center">Registration from</h1>
       <form onSubmit={props.submit}>
@@ -53,10 +62,18 @@ export default function Register(props) {
           onClick={props.click}
         >
           {btnText}
-        </button>
-      
+        </button><br/>
+
+        <Stylebtn type="button" flag="1" bgcolor="orange">
+          Login{" "}
+        </Stylebtn>
+        <Stylebtn type="button" flag="1" bgcolor="green">
+          Login with Google{" "}
+        </Stylebtn>
+        <Stylebtn type="button" flag="0" bgcolor="blue">
+          Login with Facebook{" "}
+        </Stylebtn>
       </form>
     </StyleRegister>
-    
   );
 }
